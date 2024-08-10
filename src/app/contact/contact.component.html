@@ -1,0 +1,96 @@
+
+<div class="section">
+    <form [formGroup]="contactForm">
+
+    <div class="card">
+        <div class="card-header">
+            Contact
+        </div>
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 colsm-4">
+                    <div class="floating-label">
+
+                        <input class="floating-input" formControlName="name" type="text">
+
+                        <label> Name</label>
+
+                    </div>
+                  <span *ngIf="submited && f['name'].errors" class="text-danger"> Name is required</span>
+ 
+                </div>
+                <div class="col-lg-4 col-md-4 colsm-4">
+                    <div class="floating-label">
+
+                        <input class="floating-input" type="number" formControlName="mobileNumber" >
+
+                        <label> Mobile Number</label>
+
+                    </div>
+                    <span *ngIf="submited && f['mobileNumber'].errors" class="text-danger"> Mobile Number is required</span>
+ 
+                    
+                        
+
+                </div>
+                <div class="col-lg-4 col-md-4 colsm-4">
+                    <div class="floating-label">
+
+                        <input class="floating-input" type="email" formControlName="email" max="10">
+
+                        <label> Email</label>
+
+                    </div>
+                    <span *ngIf="submited && f['email'].errors" class="text-danger"> Email is required</span>
+
+
+                      
+
+                </div>
+                
+
+                <div class="col-sm-12 col-md-12 col-lg-12 text-right">
+                    <button type="button" class="btn btn-raised btn-md btnAdd" (click)="onClickAdd()">Add</button>
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div [hidden]="displayTable" >
+
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Mobie Number</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of personList">
+
+                            <td class="text-left">{{data.name}}</td>
+                            <td class="text-right">{{data.mobileNumber}}</td>
+                            <td class="text-left">{{data.email}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            
+
+        </div>
+
+    </div>
+    
+
+</form>
+
+</div>
