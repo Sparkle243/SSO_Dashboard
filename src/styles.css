@@ -168,17 +168,17 @@ ul li {
 
 
 /* buttons styles */
-.btnLogin {
+.btnCreate {
   /* background-color:#90cd9b !important; */
-  background-color:#057e1b !important;
+  background-color:#71da84 !important;
   color: white !important;
-  width: 100px !important;
+  width: 100% !important;
   height: 35px !important;
   border: none !important; 
   border-radius: 3px !important;
 }
 
-.btn.btnLogin:hover {
+.btn.btnCreate:hover {
   background: #057e1b !important;
   color: white !important;
   border-color: #975AFF !important;
@@ -187,10 +187,25 @@ ul li {
   color: white !important;
   border-color: #975AFF !important; */
 }
+.btnLogin {
+  background-color:#8999ab !important;
+  color: white !important;
+  width: 100% !important;
+  height: 35px !important;
+  border: none !important; 
+  border-radius: 3px !important;
+}
+
+.btn.btnLogin:hover {
+  color: #fff !important;
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+}
+
 .btnRegister {
   background-color:#8999ab !important;
   color: white !important;
-  width: 100px !important;
+  width: 100% !important;
   height: 35px !important;
   border: none !important; 
   border-radius: 3px !important;

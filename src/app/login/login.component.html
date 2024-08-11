@@ -27,18 +27,25 @@
               <div [hidden]="!loginOrSignup">
                 <h4 class="mb-2 card-title">Login</h4>
                 <p>Welcome back, please login to your account.</p>
-                <form>
-
+                <form [formGroup]="loginForm">
                   <div class="form-group">
-                    <input class="floating-input" type="text" id="username" placeholder="UserName"  [(ngModel)]="username"
-                      name="username" required>
-
+                    <input class="floating-input" placeholder="User Name" formControlName="username" type="text">
+                    <span *ngIf="submit && L['username'].errors" class="text-danger"> User Name is required</span>
                   </div>
+                  <!-- <div class="form-group">
+                    <input class="floating-input" type="text" id="username" placeholder="UserName"
+                      [(ngModel)]="username" name="username" required>
+
+                  </div> -->
                   <div class="form-group">
+                    <input class="floating-input" placeholder="password" formControlName="password" type="text">
+                    <span *ngIf="submit && L['password'].errors" class="text-danger">Password is required</span>
+                  </div>
+                  <!-- <div class="form-group">
                     <input type="password" id="password" placeholder="Password" class="floating-input"
                       [(ngModel)]="password" name="password" required>
 
-                  </div>
+                  </div> -->
                   <div class="d-sm-flex justify-content-between mb-3 font-small-2">
                     <div class="remember-me mb-2 mb-sm-0">
                       <div class="checkbox auth-checkbox">
@@ -84,9 +91,17 @@
                 </form>
               </div>
               <div class="d-flex justify-content-between flex-sm-row flex-column">
-                <button type="button" class="btn btn-raised btn-md btnRegister"
-                  (click)="onSubmit('register')">Register</button>
-                <button type="submit" class="btnLogin btn btn-md btn-raised" (click)="onSubmit('login')">Login</button>
+                <button type="button" class="btn btn-raised btn-md btnRegister" (click)="onSubmitSignUp()"
+                  [hidden]="loginOrSignup">Register</button>
+                <button type="submit" class="btnLogin btn btn-md btn-raised" (click)="onSubmitLogin()"
+                  [hidden]="!loginOrSignup">Login</button>
+              </div>
+
+              <div class="mt-2">
+                <button type="button" class="btnCreate btn btn-md btn-raised" [hidden]="!loginOrSignup" (click)="onSubmit('c')">Create New
+                  Account</button>
+                  <button type="button" class="btnCreate btn btn-md btn-raised" [hidden]="loginOrSignup" (click)="onSubmit('l')">Login</button>
+  
               </div>
 
             </div>
