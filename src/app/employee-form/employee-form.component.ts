@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-employee-form',
+  templateUrl: './employee-form.component.html',
+  styleUrls: ['./employee-form.component.css']
 })
-export class HomeComponent implements OnInit {
-
-  tableForm!: FormGroup;
-
-  constructor(private fb: FormBuilder) {}
+export class EmployeeFormComponent implements OnInit {
+  employeeForm!: FormGroup;
+  sharedParentData: any;
+  showChild:boolean=true
+  constructor(private fb: FormBuilder,private router: Router) {}
 
   ngOnInit(): void {
     // Initialize form with FormArray for table rows
-    this.tableForm = this.fb.group({
+    this.employeeForm = this.fb.group({
       rows: this.fb.array([]),
     });
 
@@ -23,20 +23,20 @@ export class HomeComponent implements OnInit {
 
   // Getter for the rows FormArray
   get rows(): FormArray {
-    return this.tableForm.get('rows') as FormArray;
+    return this.employeeForm.get('rows') as FormArray;
   }
 
   // Add a new row to the FormArray
   addRow() {
-    if (this.tableForm.invalid) {
+    if (this.employeeForm.invalid) {
       alert('Please fill all required fields before adding a new row!');
       return; // Prevent adding a new row
     }
     const newRow = this.fb.group({
       id: [this.rows.length + 1],  // Auto-incrementing ID
       name: ['', Validators.required],  // Required field
-      age: [null, [Validators.required, Validators.min(0)]],  // Required and min value validation
-      email: ['', [Validators.required, Validators.email]]  // Email validation
+      email: ['', [Validators.required, Validators.email]],  // Email validation
+      contact: [null, Validators.required,],  // Required and min value validation
     });
     this.rows.push(newRow);  // Add the new row to FormArray
     console.log("this.rows",this.rows)
@@ -49,11 +49,16 @@ export class HomeComponent implements OnInit {
 
   // Save the form (you can send this to a backend or handle locally)
   saveForm() {
-    console.log('Form Data:', this.tableForm.value);
-    if (this.tableForm.valid) {
+    console.log('Form Data:', this.employeeForm.value,this.employeeForm.value.rows);
+    if (this.employeeForm.valid) {
       // Handle form submission (e.g., send to backend)
-      alert('Form saved successfully!');
+     
+      this.sharedParentData = this.employeeForm.value.rows; // Get form data
+    console.log("Data to pass:", this.sharedParentData);
+    this.router.navigate(['/employeeDetails'], { state: { data: this.sharedParentData } });
+     this.showChild = false
     } else {
+      this.showChild = true
       alert('Form is invalid!');
     }
   }

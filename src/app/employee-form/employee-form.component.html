@@ -1,10 +1,11 @@
 
 
-<div class="section">
 
+<div class="section">
+    <form [formGroup]="employeeForm">
     <div class="card">
         <div class="card-header">
-            Home 
+            Employee Filling Form 
         </div>
         <div class="card-body">
             <div class="container mt-4">
@@ -12,14 +13,14 @@
                     <button type="button" (click)="addRow()" class="btn btn-md btn-raised btnAddNewRow">Add New Row</button>
 
                 </div>
-                <form [formGroup]="tableForm">
+            
                   <table class="table table-bordered">
                     <thead>
                       <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Age</th>
                         <th>Email</th>
+                        <th>Contact</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -34,19 +35,20 @@
                           </div>
                         </td>
                         <td>
-                          <input type="number" formControlName="age" class="form-control" placeholder="Enter Age" />
-                          <!-- Error message for age field -->
-                          <div *ngIf="row.get('age')?.invalid && row.get('age')?.touched" class="text-danger">
-                            Age must be a positive number
-                          </div>
-                        </td>
+                            <input type="email" formControlName="email" class="form-control" placeholder="Enter Email" />
+                            <!-- Error message for email field -->
+                            <div *ngIf="row.get('email')?.invalid && row.get('email')?.touched" class="text-danger">
+                              Enter a valid email
+                            </div>
+                          </td>
                         <td>
-                          <input type="email" formControlName="email" class="form-control" placeholder="Enter Email" />
-                          <!-- Error message for email field -->
-                          <div *ngIf="row.get('email')?.invalid && row.get('email')?.touched" class="text-danger">
-                            Enter a valid email
-                          </div>
-                        </td>
+                            <input type="number" formControlName="contact" class="form-control" placeholder="Enter Contact" />
+                            <!-- Error message for email field -->
+                            <div *ngIf="row.get('contact')?.invalid && row.get('contact')?.touched" class="text-danger">
+                              Enter a valid email
+                            </div>
+                          </td>
+                       
                         <td class="text-center">
                           <i class="fas fa-trash text-danger" (click)="removeRow(i)"></i>
                         </td>
@@ -59,14 +61,16 @@
               
                   <!-- Save button -->
                   
-                </form>
+        
                 <div class="float-center"> 
                     <button type="button" (click)="saveForm()" class="btn btn-success mt-3">Save</button>
                   </div>
               </div>
+              <app-employee-details [sharedParentData]="sharedParentData" [hidden]="showChild"></app-employee-details>
               
         </div>
 
     </div>
+</form>
 
 </div>

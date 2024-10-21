@@ -106,7 +106,8 @@ ul li {
   padding-right: 6px !important;
   padding-top: 6px !important;
   padding-bottom: 6px !important;
-  margin: 5px ;
+  /* margin: 5px ; */
+  background-color: white;
 }
 .floating-label label {
   color: black !important;
@@ -254,4 +255,29 @@ button:hover .starts{
   /* background: #975AFF !important;
   color: white !important;
   border-color: #975AFF !important; */
+}
+
+.btnAddNewRow {
+  /* background-color:#90cd9b !important; */
+  background-color:#057e1b !important;
+  color: white !important;
+  width: 135px !important;
+  height: 35px !important;
+  border: none !important; 
+  border-radius: 3px !important;
+}
+
+.btn.btnAddNewRow:hover {
+  background: #057e1b !important;
+  color: white !important;
+  border-color: #975AFF !important;
+
+  /* background: #975AFF !important;
+  color: white !important;
+  border-color: #975AFF !important; */
+}
+.logoutIconClass{
+  font-size: 22px !important;
+  font-weight: bold !important;
+  color: white !important;
 }
