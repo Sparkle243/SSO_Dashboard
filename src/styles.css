@@ -281,3 +281,51 @@ button:hover .starts{
   font-weight: bold !important;
   color: white !important;
 }
+
+/* card hightlight */
+
+.cardBorder {
+  --c: #13426b; /* Custom color variable */
+  --b: 3px; /* Border thickness */
+  --g: 3px; /* Gap */
+  padding: calc(var(--g) + var(--b)); /* Padding calculation */
+  transition: 0.3s, background-size 0.3s 0.3s;
+  cursor: pointer; /* Change cursor to pointer */
+  border: 1px solid transparent; /* Default border */
+}
+
+.cardBorder:hover {
+  background-size: 110%; /* Scale background on hover, adjust as needed */
+  /* border: var(--b) solid var(--c);  */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+  --_i:100%
+}
+
+/* Optional: Add a background to enhance the hover effect */
+.cardBorder {
+  background-color: white; /* Default background color */
+  background-image: linear-gradient(var(--c), var(--c)); /* Gradient background */
+  /* background-position: 0 100%;  */
+  background-repeat: no-repeat; /* No repeat */
+  background-size: 100% 0%; /* Initial background size */
+}
+
+.cardBorder:hover {
+  background-size: 100% 100%; /* Expand background on hover */
+}
+
+.auth-img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.navbar-logo {
+  object-fit: contain; /* Ensures the image is fully visible */
+  padding: 2px; /* Optional padding for clarity */
+}
+
+.login-logo {
+  max-width: 100%; /* Ensures responsiveness */
+  height: auto; /* Keeps aspect ratio */
+}
