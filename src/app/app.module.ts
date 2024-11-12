@@ -21,7 +21,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { GeneralserviceService } from './generalservice.service';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -45,7 +45,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 3000, // Duration in ms
       positionClass: 'toast-top-right', // Position of the toast

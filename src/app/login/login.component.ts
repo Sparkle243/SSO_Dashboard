@@ -162,13 +162,13 @@ onSubmitLogin() {
       localStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['/dashboard']);
     } else {
-      // Swal.fire('Invalid credentials', 'Please check your username and password.', 'error');
-      this.toastr.error('Please check your username and password', 'Error');
+      Swal.fire('Invalid credentials', 'Please check your username and password.', 'error');
+      // this.toastr.error('Please check your username and password', 'Error');
     }
   }).catch(error => {
     console.error('Error during login:', error);
-    this.toastr.error ('An error occurred during login. Please try again.', 'Login error');
-    // Swal.fire('Login error', 'An error occurred during login. Please try again.', 'error');
+    // this.toastr.error ('An error occurred during login. Please try again.', 'Login error');
+    Swal.fire('Login error', 'An error occurred during login. Please try again.', 'error');
   });
 }
 
@@ -176,8 +176,8 @@ onSubmitLogin() {
 validateUser(username: string, password: string): Promise<any> {
   return new Promise((resolve, reject) => {
     // Replace this logic with actual API calls for user validation
-    const mockAdminUser = { username: 'admin', password: 'adminpassword', role: 'admin' };
-    const mockRegularUser = { username: 'user', password: 'userpassword', role: 'user' };
+    const mockAdminUser = { username: 'admin', password: '12345', role: 'admin' };
+    const mockRegularUser = { username: 'user', password: '12345', role: 'user' };
 
     if (username === mockAdminUser.username && password === mockAdminUser.password) {
       resolve(mockAdminUser); // Successful admin login

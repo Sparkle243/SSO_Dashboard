@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 export class GeneralserviceService {
   setLoginDataList: any;
   private routePermissions: { [key: string]: string[] } = {
-    'newuser': ['user', 'admin'],
-      'exituser': ['admin'],
-      'home': ['user', 'admin'],
-      'about': ['admin'],
-      'contact': ['user', 'admin'],
+    'newuser': ['user',],
+      'exituser': ['user'],
+      'home': ['user',],
+      'about': ['user'],
+      'contact': ['user',],
       'employeeDetails': ['admin'],
-      'employeeForm': ['user', 'admin'],
+      'employeeForm': ['admin'],
     // Add other route-role mappings as needed
   };
   constructor() { }
