@@ -1,31 +1,89 @@
 
 <div class="section">
 
-    <div class="card">
-        <div class="card-header">
+    <!-- <div class="card"> -->
+        <!-- <div class="card-header">
              Dashboard
+        </div> -->
+     
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 smallCard" (click)="onClickCard()" >
+                <div class="card">
+                    <div class="card-header text-center">
+                        Reception
+                    </div>
+                    <div class="card-body">
+                        <img src="./assets/Img/reception.jpg" alt="Logo" class="login-logo" class="img-fluid" 
+                         role="button">
+                    </div>
+            
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 smallCard" (click)="onClickCard()" >
+                <div class="card">
+                    <div class="card-header text-center">
+                         Doctors
+                    </div>
+                    <div class="card-body">
+                        <img src="./assets/Img/Doctors.jpg" alt="Logo" class="login-logo" class="img-fluid" 
+                        role="button">
+                    </div>
+            
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 smallCard" (click)="onClickCard()" >
+                <div class="card">
+                    <div class="card-header text-center">
+                        Pharmacy
+                    </div>
+                    <div class="card-body">
+                        <img src="./assets/Img/Pharmacy.jpg" alt="Logo" class="login-logo" class="img-fluid" 
+                         role="button">
+                    </div>
+            
+                </div>
+            </div>
+           
+            <div class="col-lg-4 col-md-4 col-sm-4 smallCard" (click)="onClickCard()" >
+                <div class="card">
+                    <div class="card-header text-center">
+                         Patients Room
+                    </div>
+                    <div class="card-body">
+                        <img src="./assets/Img/PatientsRoom.jpg" alt="Logo" class="login-logo" class="img-fluid" 
+                         role="button">
+                    </div>
+            
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 smallCard" (click)="onClickCard()" >
+                <div class="card">
+                    <div class="card-header text-center">
+                        Insurance Desk
+                    </div>
+                    <div class="card-body">
+                        <img src="./assets/Img/InsuranceImage.jpg" alt="Logo" class="login-logo" class="img-fluid" 
+                         role="button">
+                    </div>
+            
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 smallCard" (click)="onClickCard()" >
+                <div class="card">
+                    <div class="card-header text-center">
+                         Leaving Patients
+                    </div>
+                    <div class="card-body">
+                        <img src="./assets/Img/LeaingPatients.jpg" alt="Logo" class="login-logo" class="img-fluid" 
+                         role="button">
+                    </div>
+            
+                </div>
+            </div>
+            
         </div>
-        <div class="card-body">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Title </th>
-                        <th>Description</th>
-                        <th>value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let data of dashboardData">
+        
 
-                        <td class="text-left">{{data.title}}</td>
-                        <td class="text-left">{{data.description}}</td>
-                        <td class="text-right">{{data.value}}</td>
-
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
+    <!-- </div> -->
 
 </div>

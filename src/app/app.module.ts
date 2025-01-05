@@ -18,6 +18,7 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ToastrModule } from 'ngx-toastr';
 
+
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -43,11 +44,11 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'home', component: HomeComponent },
+      // { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'employeeDetails', component: EmployeeDetailsComponent },
-      { path: 'employeeForm', component: EmployeeFormComponent },
+      // { path: 'employeeDetails', component: EmployeeDetailsComponent },
+      // { path: 'employeeForm', component: EmployeeFormComponent },
     ])
   ],
   providers: [],

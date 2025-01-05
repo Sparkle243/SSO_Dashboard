@@ -101,7 +101,7 @@ export class LoginComponent {
         icon: 'warning',
         // showCancelButton: true,
         // confirmButtonText: 'Yes, Logout!',
-        cancelButtonText: 'Ok'
+        cancelButtonText: 'Ok',
       }).then((result) => {
         if (result) {
           

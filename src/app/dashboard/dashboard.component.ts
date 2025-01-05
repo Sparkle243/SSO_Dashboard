@@ -16,4 +16,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClickCard(){
+    window.open('http://localhost:4200/login')
+
+}
 }

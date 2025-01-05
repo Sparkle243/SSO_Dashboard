@@ -1,0 +1,8 @@
+table.dataTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table.dataTable th, table.dataTable td {
+    padding: 10px;
+    text-align: left;
+  }

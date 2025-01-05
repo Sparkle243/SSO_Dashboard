@@ -13,11 +13,11 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'dashboard', component:DashboardComponent },
-    { path: 'home', component: HomeComponent },
+    // { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'employeeDetails', component: EmployeeDetailsComponent },
-    { path: 'employeeForm', component: EmployeeFormComponent },
+    // { path: 'employeeDetails', component: EmployeeDetailsComponent },
+    // { path: 'employeeForm', component: EmployeeFormComponent },
   ];
 
   @NgModule({

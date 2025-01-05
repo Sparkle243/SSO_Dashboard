@@ -1,0 +1,17 @@
+.smallCard{
+   padding: 10px !important;
+}
+
+.card-body {
+    width: 100%; /* Ensure the card body takes the full width of the parent */
+    overflow: hidden; /* Hide any overflowed content */
+  }
+  
+  .card-body img {
+    width: 100%; /* Forces the image to take up the full width of the card body */
+    height: 150px; /* Set a fixed height to maintain consistency */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    display: block; /* Ensures no extra space below the image */
+    margin: 0 auto; /* Centers the image horizontally */
+  }
+  
